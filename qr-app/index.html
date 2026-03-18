@@ -20,26 +20,33 @@
 
   <div class="app">
 
-    <!-- S1 · EINSTIEG -->
+    <!-- ══════════════════════════════════════════
+         S1 · EINSTIEG — Spannung aufbauen
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s1">
       <div class="screen-body s1-layout">
         <div class="s1-top">
-          <span class="eyebrow">haha. 😄</span>
-          <h1 class="display">Wow –<br>den ersten Schritt<br>hast du gewagt.</h1>
-          <p class="lead">Du scheinst neugierig zu sein und das haben wir schon mal gemeinsam,cool.</p>
+          <span class="eyebrow">psst.</span>
+          <h1 class="display">Warte mal&nbsp;kurz.</h1>
+          <p class="lead">Du hast gerade einen QR-Code auf einem T-Shirt gescannt.</p>
+          <p class="lead">Zufälle gibt's nicht&nbsp;– das weisst du auch.</p>
           <div class="tension-line"></div>
-          <p class="body">Wenn du Lust hast, mehr zu erfahren, dann klick doch einfach unten drauf.</p>
-               </div>
+          <p class="body">Hinter diesem Code steckt mehr als du vielleicht denkst. Kein Werbegag. Kein Streich. Nur jemand, der es ein bisschen anders macht als alle anderen.</p>
+          <p class="body body-italic">Neugierig, wer das ist?</p>
+        </div>
         <div class="btn-dock">
-          <button class="btn btn-fill" onclick="goTo(2)">Okay… ich bin neugierig 😄</button>
-          <p class="btn-sub">dauert keine 3 Minuten – versprochen</p>
+          <button class="btn btn-fill" onclick="goTo(2)">Ich bin gespannt, wie es weitergeht</button>
+          <p class="btn-sub">dauert keine 3 Minuten&nbsp;😄</p>
         </div>
       </div>
     </section>
 
-    <!-- S2 · GENDER -->
+    <!-- ══════════════════════════════════════════
+         S2 · GENDER + WEIBLICH-FLOW
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s2">
 
+      <!-- Standard-Auswahl -->
       <div class="screen-body" id="s2-main">
         <div class="screen-head">
           <span class="eyebrow">kurze Frage an dich</span>
@@ -64,6 +71,7 @@
         </div>
       </div>
 
+      <!-- Weiblich → Foto + Interesse-Frage -->
       <div class="screen-body hidden" id="s2-female-photo">
         <div class="screen-head">
           <span class="eyebrow">schön, dass du da bist&nbsp;😄</span>
@@ -79,6 +87,7 @@
         </div>
       </div>
 
+      <!-- Weiblich → Kein Interesse -->
       <div class="screen-body hidden" id="s2-female-nein">
         <div class="screen-head">
           <span class="eyebrow">hey, kein stress</span>
@@ -90,6 +99,7 @@
         </div>
       </div>
 
+      <!-- Männlich -->
       <div class="screen-body hidden" id="s2-male">
         <div class="screen-head">
           <span class="eyebrow">okay dann&nbsp;😄</span>
@@ -101,6 +111,7 @@
         </div>
       </div>
 
+      <!-- Unsicher -->
       <div class="screen-body hidden" id="s2-other">
         <div class="screen-head">
           <span class="eyebrow">fair enough</span>
@@ -114,45 +125,63 @@
 
     </section>
 
-    <!-- S3 · KURZ ZU MIR ✏️ -->
+    <!-- ══════════════════════════════════════════
+         S3 · COOL! + FACTS ÜBER MICH   ✏️ EDITIERBAR
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s3">
       <div class="screen-body">
         <div class="screen-head">
           <span class="eyebrow">cool! 😄</span>
           <h2 class="headline">Kurz zu mir.</h2>
         </div>
+
         <div class="photo-frame photo-portrait">
           <img src="images/20250910_192446.jpg" alt="">
         </div>
-        <!-- ✏️ TEXT ANPASSEN -->
+
+        <!-- ╔══════════════════════════════════════╗
+             ║  ✏️  TEXT EDITIEREN – SCREEN 3       ║
+             ╚══════════════════════════════════════╝ -->
         <div class="facts-block">
           <p class="facts-label">Facts</p>
           <p class="body">Ich mag das Leben. Menschen, die neugierig sind und mit denen man lachen kann.</p>
           <p class="body">Humor ist mir sehr wichtig. Zusammen zu lachen ist wundervoll&nbsp;– und ja, echte Gespräche und eine gute Energie finde ich attraktiv.</p>
         </div>
+        <!-- ╚══════════════════════════════════════╝ -->
+
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="goTo(4)">Wer bin ich?</button>
         </div>
       </div>
     </section>
 
-    <!-- S4 · WER BIN ICH ✏️ -->
+    <!-- ══════════════════════════════════════════
+         S4 · WER BIN ICH?   ✏️ EDITIERBAR
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s4">
       <div class="screen-body">
         <div class="screen-head">
           <span class="eyebrow">wer bin ich?</span>
         </div>
+
         <div class="photo-frame photo-square">
           <img src="images/Screenshot_20210819_222457.jpg" alt="">
         </div>
-        <!-- ✏️ ZITATE ANPASSEN -->
+
+        <!-- ╔══════════════════════════════════════╗
+             ║  ✏️  ZITATE – SCREEN 4               ║
+             ╚══════════════════════════════════════╝ -->
         <blockquote class="quote-block">
           „Manche Momente sind nicht nur flüchtige Augenblicke, sondern das erste Kapitel einer neuen Geschichte."
         </blockquote>
+
         <blockquote class="quote-block">
           „Gemeinsam lachend, die Zeit vergessend, durch die Nacht. Das Herz blüht, die Wärme erfüllt die Seele&nbsp;– vielleicht der Beginn von etwas Unvergesslichem."
         </blockquote>
-        <!-- ✏️ LISTE ANPASSEN -->
+
+        <!-- ╔══════════════════════════════════════╗
+             ║  ✏️  BULLET-FACTS – SCREEN 4         ║
+             ╚══════════════════════════════════════╝ -->
         <div class="fact-list-wrap">
           <p class="facts-label">Ich wäre noch glücklicher, wenn ich&nbsp;…</p>
           <ul class="fact-list">
@@ -163,6 +192,8 @@
             <li>wir am selben Strick ziehen, ohne die eigenen Fäden aus der Hand zu geben.</li>
           </ul>
         </div>
+        <!-- ╚══════════════════════════════════════╝ -->
+
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="goTo(5)">Okay&nbsp;… das gefällt mir</button>
         </div>
@@ -170,9 +201,12 @@
       </div>
     </section>
 
-    <!-- S5 · FRAGEN + AUSWERTUNG -->
+    <!-- ══════════════════════════════════════════
+         S5 · FRAGEN + PERSÖNLICHKEITS-AUSWERTUNG
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s5">
 
+      <!-- Fragen-Ansicht -->
       <div class="screen-body" id="s5-questions">
         <div class="screen-head">
           <span class="eyebrow">jetzt bin ich neugierig</span>
@@ -241,14 +275,18 @@
         <div style="height:40px; flex-shrink:0;"></div>
       </div>
 
+      <!-- Ergebnis-Ansicht -->
       <div class="screen-body hidden" id="s5-result">
         <div class="screen-head">
           <span class="eyebrow">meine Einschätzung&nbsp;😄</span>
         </div>
+
         <div class="personality-card">
           <p class="personality-text" id="personalityText"></p>
         </div>
+
         <p class="body" style="margin-top: 24px;">Trifft das so halbwegs hin?</p>
+
         <div class="option-list" id="personalityConfirmOptions">
           <button class="option-btn" onclick="confirmPersonality('yes', this)">
             <span class="opt-icon">✓</span>
@@ -261,10 +299,12 @@
             <svg class="opt-arr" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
+
         <div class="reveal hidden" id="personalityAddField">
           <p class="q-label" style="margin-top: 8px;" id="addFieldLabel">Das fehlt noch:</p>
           <textarea class="field-area" id="personalityAdd" placeholder="…" rows="3"></textarea>
         </div>
+
         <div class="btn-dock">
           <button class="btn btn-fill hidden" id="s5Next" onclick="goTo(6)">Weiter&nbsp;→</button>
         </div>
@@ -273,7 +313,9 @@
 
     </section>
 
-    <!-- S6 · FREITEXT -->
+    <!-- ══════════════════════════════════════════
+         S6 · FREITEXT
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s6">
       <div class="screen-body">
         <div class="screen-head">
@@ -292,7 +334,9 @@
       </div>
     </section>
 
-    <!-- S7 · KONTAKT -->
+    <!-- ══════════════════════════════════════════
+         S7 · KONTAKT
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s7">
       <div class="screen-body">
         <div class="screen-head">
@@ -318,12 +362,17 @@
           </button>
         </div>
 
+        <!-- Nummer + Name -->
         <div class="reveal hidden" id="cr-number">
           <div class="field-group">
-            <input type="text" class="field-input" id="nameInput" placeholder="Dein Name" autocomplete="given-name">
-            <input type="tel" class="field-input" id="phoneInput" placeholder="+41 79 000 00 00" autocomplete="tel">
+            <input type="text"  class="field-input" id="nameInput"  placeholder="Dein Name" autocomplete="given-name">
+            <input type="tel"   class="field-input" id="phoneInput" placeholder="+41 79 000 00 00" autocomplete="tel">
           </div>
           <p class="muted" style="font-size:13px; margin-top:10px;">Nur für mich. Versprochen.</p>
+          <!-- ╔══════════════════════════════════════╗
+               ║  ✏️  WhatsApp-Nummer in app.js       ║
+               ║      WHATSAPP_NUMMER = '+41...'      ║
+               ╚══════════════════════════════════════╝ -->
           <button class="btn btn-soft" style="margin-top:14px;" onclick="submitContact()">📨&ensp;Absenden</button>
         </div>
 
@@ -335,6 +384,9 @@
           <p class="body">Alles gut. Sprich mich einfach an, wenn dir danach ist.</p>
         </div>
 
+        <!-- ╔════════════════════════════════════╗
+             ║  ✏️  INSTAGRAM → in app.js Zeile 1 ║
+             ╚════════════════════════════════════╝ -->
         <div class="insta-wrap hidden" id="instaBlock">
           <div class="rule"></div>
           <p class="muted" style="font-size:13px;">Oder du findest mich hier:</p>
@@ -348,41 +400,57 @@
       </div>
     </section>
 
-    <!-- S8 · ABSCHLUSS -->
+    <!-- ══════════════════════════════════════════
+         S8 · ABSCHLUSS
+    ══════════════════════════════════════════ -->
     <section class="screen" id="s8">
 
+      <!-- Hauptinhalt -->
       <div class="screen-body" id="s8-main">
         <div class="screen-head">
           <span class="eyebrow">wow.</span>
           <h2 class="headline">Du hast es wirklich bis hierhin geschafft.</h2>
         </div>
+
         <div class="photo-frame photo-portrait">
           <img src="images/IMG_20220701_163700.jpg" alt="">
         </div>
-        <!-- ✏️ TEXT ANPASSEN -->
+
+        <!-- ╔══════════════════════════════════════╗
+             ║  ✏️  TEXT EDITIEREN – SCREEN 8       ║
+             ╚══════════════════════════════════════╝ -->
         <p class="body" style="margin-top:20px;">Cool, das gefällt mir wirklich. Das Eis ist gebrochen&nbsp;– der Rest passiert am besten im echten Leben.</p>
         <p class="body body-italic">Und weil ich gerade offensichtlich mit einem Getränk in der Hand zu sehen bin&nbsp;😄</p>
         <p class="body">Wenn du möchtest, schick mir einfach ein Foto von dir&nbsp;– am schönsten natürlich beim Anstossen mit mir.</p>
+        <!-- ╚══════════════════════════════════════╝ -->
+
         <div class="btn-dock">
+          <!-- ╔══════════════════════════════════════╗
+               ║  ✏️  WhatsApp-Nummer in app.js       ║
+               ╚══════════════════════════════════════╝ -->
           <button class="btn btn-fill" id="drinkBtn" onclick="sendDrinkPhoto()">🥂&ensp;Per WhatsApp schicken</button>
           <button class="btn btn-ghost" onclick="showThanks()">Abschliessen</button>
         </div>
       </div>
 
+      <!-- Danke-Ansicht -->
       <div class="screen-body s1-layout hidden" id="s8-thanks">
         <div>
           <span class="eyebrow">danke dir&nbsp;🙏</span>
           <h2 class="headline">Du hörst von mir.</h2>
           <p class="lead">Ich freue mich wirklich, dich kennenzulernen.</p>
           <div class="tension-line"></div>
-          <!-- ✏️ NAME ANPASSEN -->
+          <!-- ╔══════════════════════════════════════╗
+               ║  ✏️  NAME ANPASSEN – SCREEN 8        ║
+               ╚══════════════════════════════════════╝ -->
           <p class="body">Gruss Tobi&nbsp;😄</p>
+          <!-- ╚══════════════════════════════════════╝ -->
         </div>
       </div>
 
     </section>
 
-  </div>
+  </div><!-- /app -->
 
   <script src="app.js"></script>
 </body>
