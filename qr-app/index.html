@@ -26,17 +26,15 @@
     <section class="screen" id="s1">
       <div class="screen-body s1-layout">
         <div class="s1-top">
-          <span class="eyebrow">psst.</span>
-          <h1 class="display">Warte mal&nbsp;kurz.</h1>
-          <p class="lead">Du hast gerade einen QR-Code auf einem T-Shirt gescannt.</p>
-          <p class="lead">Zufälle gibt's nicht&nbsp;– das weisst du auch.</p>
-          <div class="tension-line"></div>
-          <p class="body">Hinter diesem Code steckt mehr als du vielleicht denkst. Kein Werbegag. Kein Streich. Nur jemand, der es ein bisschen anders macht als alle anderen.</p>
-          <p class="body body-italic">Neugierig, wer das ist?</p>
+          <!-- ✏️ Foto ersetzen: Datei als "ha-gescannt.jpg" in images/ hochladen -->
+          <div class="photo-frame photo-portrait">
+            <img src="images/ha-gescannt.png" alt="">
+          </div>
+          <h1 class="display" style="margin-top: 24px;">Ok, das ist cool –<br>du scheinst neugierig<br>zu sein!</h1>
+          <p class="muted" style="margin-top: 4px; font-size: 15px;">Wenn du Lust hast, mehr zu erfahren, dann klick doch einfach unten drauf.</p>
         </div>
         <div class="btn-dock">
-          <button class="btn btn-fill" onclick="goTo(2)">Ich bin gespannt, wie es weitergeht</button>
-          <p class="btn-sub">dauert keine 3 Minuten&nbsp;😄</p>
+          <button class="btn btn-fill" onclick="goTo(2)">Okay… ich bin neugierig 😄</button>
         </div>
       </div>
     </section>
@@ -93,7 +91,7 @@
           <span class="eyebrow">hey, kein stress</span>
           <h2 class="headline">Kein Problem – du hast bestimmt schon viel Schlimmeres angeklickt&nbsp;:)</h2>
         </div>
-        <p class="body">Falls du es dir anders überlegst&nbsp;– ich bin da draussen irgendwo mit einem T-Shirt&nbsp;😄</p>
+        <p class="body">Falls du es dir anders überlegst&nbsp;– ich bin vielleicht noch in der Nähe&nbsp;😉</p>
         <div class="btn-dock">
           <button class="btn btn-outline" onclick="goTo(3)">Ach, ich schau trotzdem mal&nbsp;😄</button>
         </div>
@@ -144,8 +142,9 @@
              ╚══════════════════════════════════════╝ -->
         <div class="facts-block">
           <p class="facts-label">Facts</p>
-          <p class="body">Ich mag das Leben. Menschen, die neugierig sind und mit denen man lachen kann.</p>
-          <p class="body">Humor ist mir sehr wichtig. Zusammen zu lachen ist wundervoll&nbsp;– und ja, echte Gespräche und eine gute Energie finde ich attraktiv.</p>
+          <p class="body">Ich mag das Leben, die Menschen, habe Freude und begegne gerne tollen Persönlichkeiten mit denen man lachen kann.</p>
+          <p class="body">Humor ist mir sehr wichtig, denn gemeinsam zu lachen ist doch einfach wundervoll.</p>
+          <p class="body">Echte, ehrliche Gespräche ohne grosse Tabu's mit viel Energie find ich sehr attraktiv.</p>
         </div>
         <!-- ╚══════════════════════════════════════╝ -->
 
@@ -159,7 +158,9 @@
          S4 · WER BIN ICH?   ✏️ EDITIERBAR
     ══════════════════════════════════════════ -->
     <section class="screen" id="s4">
-      <div class="screen-body">
+
+      <!-- Haupt-Inhalt -->
+      <div class="screen-body" id="s4-main">
         <div class="screen-head">
           <span class="eyebrow">wer bin ich?</span>
         </div>
@@ -168,20 +169,14 @@
           <img src="images/Screenshot_20210819_222457.jpg" alt="">
         </div>
 
-        <!-- ╔══════════════════════════════════════╗
-             ║  ✏️  ZITATE – SCREEN 4               ║
-             ╚══════════════════════════════════════╝ -->
-        <blockquote class="quote-block">
+        <blockquote class="quote-block quote-left">
           „Manche Momente sind nicht nur flüchtige Augenblicke, sondern das erste Kapitel einer neuen Geschichte."
         </blockquote>
 
-        <blockquote class="quote-block">
+        <blockquote class="quote-block quote-right">
           „Gemeinsam lachend, die Zeit vergessend, durch die Nacht. Das Herz blüht, die Wärme erfüllt die Seele&nbsp;– vielleicht der Beginn von etwas Unvergesslichem."
         </blockquote>
 
-        <!-- ╔══════════════════════════════════════╗
-             ║  ✏️  BULLET-FACTS – SCREEN 4         ║
-             ╚══════════════════════════════════════╝ -->
         <div class="fact-list-wrap">
           <p class="facts-label">Ich wäre noch glücklicher, wenn ich&nbsp;…</p>
           <ul class="fact-list">
@@ -192,13 +187,26 @@
             <li>wir am selben Strick ziehen, ohne die eigenen Fäden aus der Hand zu geben.</li>
           </ul>
         </div>
-        <!-- ╚══════════════════════════════════════╝ -->
 
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="goTo(5)">Okay&nbsp;… das gefällt mir</button>
+          <button class="btn btn-ghost" onclick="showS4ZuViel()">echt jetzt? Das ist mir zuviel&nbsp;😅</button>
         </div>
         <div style="height:40px; flex-shrink:0;"></div>
       </div>
+
+      <!-- "Zu viel" Reaktion -->
+      <div class="screen-body hidden" id="s4-zuviel">
+        <div class="screen-head">
+          <span class="eyebrow">hmm&nbsp;🤔</span>
+          <h2 class="headline">Bist du dir wirklich ganz sicher, die Chance deines Lebens zu verpassen……vielleicht?&nbsp;:)</h2>
+        </div>
+        <div class="btn-dock">
+          <button class="btn btn-ghost" onclick="finishEarly()">Ja, ich bin sicher. Tschüss!&nbsp;😄</button>
+          <button class="btn btn-outline" onclick="hide('s4-zuviel'); show('s4-main')">Okay okay… weiter&nbsp;😄</button>
+        </div>
+      </div>
+
     </section>
 
     <!-- ══════════════════════════════════════════
@@ -269,6 +277,13 @@
           </div>
         </div>
 
+        <div class="ons-wrap">
+          <button class="btn btn-ghost" style="margin-top: 8px;" onclick="showONS(this)">Sorry&nbsp;– ich möchte nur ONS&nbsp;😅</button>
+          <div class="hidden reveal" id="onsResponse">
+            <p class="body" style="margin-top: 12px; font-style: italic; color: var(--gold);">Respect, dass du das sagst&nbsp;😄 Ist auch eine Aussage. Kannst trotzdem noch auf Auswerten klicken&nbsp;– wer weiss, vielleicht überraschst du dich selbst.</p>
+          </div>
+        </div>
+
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="showPersonalityResult()">Auswerten&nbsp;→</button>
         </div>
@@ -289,7 +304,7 @@
 
         <div class="option-list" id="personalityConfirmOptions">
           <button class="option-btn" onclick="confirmPersonality('yes', this)">
-            <span class="opt-icon">✓</span>
+            <span class="opt-icon">😄</span>
             <span class="opt-label">Ja, ziemlich gut getroffen&nbsp;😄</span>
             <svg class="opt-arr" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
@@ -320,7 +335,7 @@
       <div class="screen-body">
         <div class="screen-head">
           <span class="eyebrow">und jetzt du</span>
-          <h2 class="headline">Hey&nbsp;… genau darum sollten wir uns kennenlernen:</h2>
+          <h2 class="headline">Hey&nbsp;… und genau darum sollten wir uns kennenlernen:</h2>
         </div>
         <textarea
           class="field-area"
@@ -419,9 +434,9 @@
         <!-- ╔══════════════════════════════════════╗
              ║  ✏️  TEXT EDITIEREN – SCREEN 8       ║
              ╚══════════════════════════════════════╝ -->
-        <p class="body" style="margin-top:20px;">Cool, das gefällt mir wirklich. Das Eis ist gebrochen&nbsp;– der Rest passiert am besten im echten Leben.</p>
-        <p class="body body-italic">Und weil ich gerade offensichtlich mit einem Getränk in der Hand zu sehen bin&nbsp;😄</p>
-        <p class="body">Wenn du möchtest, schick mir einfach ein Foto von dir&nbsp;– am schönsten natürlich beim Anstossen mit mir.</p>
+        <p class="body" style="margin-top:20px;">Cool, das gefällt mir wirklich sehr gut! Das Eis ist schon mal gebrochen&nbsp;– wer weiss, vielleicht schmilzt es ja sogar noch&nbsp;:)</p>
+        <p class="body">Prost.</p>
+        <p class="body">Wenn du möchtest, dann sende mir doch ein Foto von dir, von hier&nbsp;:) Ich freue mich!</p>
         <!-- ╚══════════════════════════════════════╝ -->
 
         <div class="btn-dock">

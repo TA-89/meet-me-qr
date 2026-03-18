@@ -340,17 +340,24 @@ body::after {
 
 /* ── ZITATE ─────────────────────────────────────────────── */
 .quote-block {
-  position: relative;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.75;
   color: var(--paper-dim);
-  padding: 20px 20px 20px 28px;
-  margin-bottom: 16px;
+  padding: 0 0 0 18px;
+  margin-bottom: 24px;
   border-left: 2px solid var(--gold-line);
-  background: var(--ink-raised);
-  border-radius: 0 var(--r) var(--r) 0;
+}
+/* Erstes Zitat: weiter links */
+.quote-left  { margin-right: 22%; }
+/* Zweites Zitat: weiter rechts, Linie rechts */
+.quote-right {
+  margin-left: 22%;
+  padding: 0 18px 0 0;
+  border-left: none;
+  border-right: 2px solid var(--gold-line);
+  text-align: right;
 }
 
 

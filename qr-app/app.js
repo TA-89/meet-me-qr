@@ -93,8 +93,15 @@ function goTo(n, instant) {
     next.scrollTop = 0;
     _currentScreen = n;
     updateProgress(n);
+    if (!instant) history.pushState({ screen: n }, '', '#' + n);
   }, instant ? 0 : 80);
 }
+
+// Handy-Zurück-Button
+window.addEventListener('popstate', function(e) {
+  const target = (e.state && e.state.screen) ? e.state.screen - 1 : _currentScreen - 1;
+  if (target >= 1) goTo(target, true);
+});
 
 function updateProgress(n) {
   const track = document.getElementById('progressTrack');
@@ -120,6 +127,24 @@ function selectGender(type) {
 function showS2Nein() {
   hide('s2-female-photo');
   show('s2-female-nein');
+}
+
+/* ── SCREEN 4: ZU VIEL + FRÜHZEITIG BEENDEN ────────────── */
+function showS4ZuViel() {
+  hide('s4-main');
+  show('s4-zuviel');
+}
+
+function finishEarly() {
+  goTo(8);
+  setTimeout(() => { hide('s8-main'); show('s8-thanks'); }, 150);
+}
+
+/* ── SCREEN 5: ONS-BUTTON ───────────────────────────────── */
+function showONS(btn) {
+  show('onsResponse');
+  btn.disabled = true;
+  btn.style.opacity = '0.45';
 }
 
 
