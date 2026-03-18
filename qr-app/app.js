@@ -216,7 +216,7 @@ function confirmPersonality(answer, btn) {
   if (answer === 'yes') {
     label.textContent = 'Was würdest du noch ergänzen?';
   } else {
-    label.textContent = 'Was passt nicht ganz? Schreib's einfach hin.';
+    label.textContent = "Was passt nicht ganz? Schreib's einfach hin.";
   }
 
   show('personalityAddField');
@@ -314,6 +314,42 @@ function submitContact() {
     );
   } else if (MEINE_EMAIL) {
     const subject = encodeURIComponent('QR-Code: ' + (name || 'Jemand') + ' möchte sich vorstellen');
+    window.location.href = 'mailto:' + MEINE_EMAIL +
+      '?subject=' + subject + '&body=' + encodeURIComponent(msg);
+  }
+
+  goTo(8);
+}
+
+
+/* ── SCREEN 7: WEITER-BUTTON (alle Kontakttypen) ────────── */
+function proceedFromContact() {
+  // Nummer-Fall: Daten wurden bereits via submitContact() gesendet
+  if (state.contactType === 'number') {
+    goTo(8);
+    return;
+  }
+
+  // Direkt / Unsicher: Zusammenfassung per WhatsApp senden (ohne Kontaktdaten)
+  const summary = buildSummary();
+  const label = state.contactType === 'direct'
+    ? '😄 Sie spricht dich lieber direkt an.'
+    : '🤔 Sie ist sich noch nicht sicher.';
+
+  const msg =
+    `Hey Tobi! 👋\n` +
+    `\nJemand hat deinen QR-Code durchgeklickt.\n` +
+    `\n${label}` +
+    (summary ? `\n\n──────────────\n${summary}` : '');
+
+  if (WHATSAPP_NUMMER) {
+    window.open(
+      'https://wa.me/' + WHATSAPP_NUMMER.replace(/\D/g, '') +
+      '?text=' + encodeURIComponent(msg),
+      '_blank'
+    );
+  } else if (MEINE_EMAIL) {
+    const subject = encodeURIComponent('QR-Code: Jemand war neugierig');
     window.location.href = 'mailto:' + MEINE_EMAIL +
       '?subject=' + subject + '&body=' + encodeURIComponent(msg);
   }
