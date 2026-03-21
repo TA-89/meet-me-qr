@@ -13,11 +13,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="progress-track" id="progressTrack">
     <div class="progress-fill" id="progressFill"></div>
   </div>
-
   <div class="app">
 
     <!-- ══════════════════════════════════════════
@@ -26,7 +24,7 @@
     <section class="screen" id="s1">
       <div class="screen-body s1-layout">
         <div class="s1-top">
-          <!-- ✏️ Foto ersetzen: Datei als "ha-gescannt.jpg" in images/ hochladen -->
+          <!-- ✏️ Foto ersetzen: Datei als "ha-gescannt.png" in images/ hochladen -->
           <div class="photo-frame photo-portrait">
             <img src="images/ha-gescannt.png" alt="">
           </div>
@@ -132,11 +130,9 @@
           <span class="eyebrow">cool! 😄</span>
           <h2 class="headline">Kurz zu mir.</h2>
         </div>
-
         <div class="photo-frame photo-portrait">
           <img src="images/20250910_192446.jpg" alt="">
         </div>
-
         <!-- ╔══════════════════════════════════════╗
              ║  ✏️  TEXT EDITIEREN – SCREEN 3       ║
              ╚══════════════════════════════════════╝ -->
@@ -147,7 +143,6 @@
           <p class="body">Echti, ehrlichi und offeni Gspröch über alles chönne zfüehre, findi sehr attraktiv.</p>
         </div>
         <!-- ╚══════════════════════════════════════╝ -->
-
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="goTo(4)">Wer bin i?</button>
         </div>
@@ -164,16 +159,13 @@
         <div class="screen-head">
           <span class="eyebrow">wer bin ich?</span>
         </div>
-
         <div class="photo-frame photo-square">
           <img src="images/Screenshot_20210819_222457.jpg" alt="">
         </div>
 
-        
         <blockquote class="quote-block quote-right">
           „Gemeinsam lachend, die Zeit vergessend, durch die Nacht. Das Herz blüht, die Wärme erfüllt die Seele&nbsp;– vielleicht der Beginn von etwas Wundervollem."
         </blockquote>
-
         <div class="fact-list-wrap">
           <p class="facts-label">I wär no viel glücklicher, wenn i&nbsp;…</p>
           <ul class="fact-list">
@@ -184,7 +176,6 @@
             <li>/mer am gliiche Strick üchet, ohne di eigne Fäde us de Hand z'geh.</li>
           </ul>
         </div>
-
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="goTo(5)">Okay&nbsp;… da gfallt mir</button>
           <button class="btn btn-ghost" onclick="showS4ZuViel()">echt jetzt? Da isch mir zviel&nbsp;😅</button>
@@ -218,7 +209,6 @@
           <h2 class="headline">Es paar Frage zu dir.</h2>
           <p class="muted">Wähl so viel us wie du magsch.</p>
         </div>
-
         <div class="q-block">
           <p class="q-label">Was passt zu dir?</p>
           <div class="chips" id="q1">
@@ -231,7 +221,6 @@
             <button class="chip" data-group="q1" onclick="toggleChip(this)">ein kleines Chaos&nbsp;😄</button>
           </div>
         </div>
-
         <div class="q-block">
           <p class="q-label">Worauf hast du Lust?</p>
           <div class="chips" id="q2">
@@ -243,19 +232,17 @@
             <button class="chip" data-group="q2" onclick="toggleChip(this)">nur ONS</button>
           </div>
         </div>
-
         <div class="q-block">
           <p class="q-label">Was suchst du?</p>
           <div class="chips" id="q3">
             <button class="chip" data-group="q3" onclick="toggleChip(this)">etwas Echtes</button>
             <button class="chip" data-group="q3" onclick="toggleChip(this)">schauen, was passiert</button>
             <button class="chip" data-group="q3" onclick="toggleChip(this)">jemanden zum Lachen</button>
-             <button class="chip" data-group="q3" onclick="toggleChip(this)">sorry, immernoch ONS&nbsp;😄</button>
+            <button class="chip" data-group="q3" onclick="toggleChip(this)">sorry, immernoch ONS&nbsp;😄</button>
             <button class="chip" data-group="q3" onclick="toggleChip(this)">gute Gespräche</button>
             <button class="chip" data-group="q3" onclick="toggleChip(this)">vielleicht genau sowas&nbsp;😄</button>
           </div>
         </div>
-
         <div class="q-block">
           <p class="q-label">Wie bist du, wenn du jemanden kennenlernst?</p>
           <div class="chips" id="q4">
@@ -266,7 +253,6 @@
             <button class="chip" data-group="q4" onclick="toggleChip(this)">ich lass mich überraschen</button>
           </div>
         </div>
-
         <div class="q-block">
           <p class="q-label">Was zündet bei dir den Funken?</p>
           <div class="chips" id="q5">
@@ -278,14 +264,12 @@
             <button class="chip" data-group="q5" onclick="toggleChip(this)">Panflötenmusik&nbsp;😄</button>
           </div>
         </div>
-
         <div class="ons-wrap">
           <button class="btn btn-ghost" style="margin-top: 8px;" onclick="showONS(this)">Sorry&nbsp;– i wött würkli nur en ONS&nbsp;😅</button>
           <div class="hidden reveal" id="onsResponse">
             <p class="body" style="margin-top: 12px; font-style: italic; color: var(--gold);">OK, jetzt werd i aber au nervös&nbsp;😄 Hmmm, klick doch glich mol uf uswerte&nbsp;– wer weiss, vielleicht überraschsisch di jo selber.</p>
           </div>
         </div>
-
         <div class="btn-dock">
           <button class="btn btn-fill" onclick="showPersonalityResult()">Auswerten&nbsp;→</button>
         </div>
@@ -297,13 +281,10 @@
         <div class="screen-head">
           <span class="eyebrow">mini Ihschätzig&nbsp;😄</span>
         </div>
-
         <div class="personality-card">
           <p class="personality-text" id="personalityText"></p>
         </div>
-
         <p class="body" style="margin-top: 24px;">Trifft da so halbwegs din Typ?</p>
-
         <div class="option-list" id="personalityConfirmOptions">
           <button class="option-btn" onclick="confirmPersonality('yes', this)">
             <span class="opt-icon">😄</span>
@@ -316,12 +297,10 @@
             <svg class="opt-arr" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-
         <div class="reveal hidden" id="personalityAddField">
           <p class="q-label" style="margin-top: 8px;" id="addFieldLabel">Da fählt no:</p>
           <textarea class="field-area" id="personalityAdd" placeholder="…" rows="3"></textarea>
         </div>
-
         <div class="btn-dock">
           <button class="btn btn-fill hidden" id="s5Next" onclick="goTo(6)">Wiiter&nbsp;→</button>
         </div>
@@ -377,7 +356,7 @@
             <span class="opt-label">I bi mir no nöd sicher</span>
             <svg class="opt-arr" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-               <p class="body">Hey wenn du dini Nummere ihgisch, denn chunnsch direkt uf mis whatsApp, freu mi, vo dir zghöre!</p>
+          <p class="body">Hey wenn du dini Nummere ihgisch, denn chunnsch direkt uf mis whatsApp, freu mi, vo dir zghöre!</p>
         </div>
 
         <!-- Nummer + Name -->
@@ -423,8 +402,21 @@
     ══════════════════════════════════════════ -->
     <section class="screen" id="s8">
 
+      <!-- Bestätigung: Angaben senden? (erscheint wenn keine Nummer eingegeben) -->
+      <div class="screen-body hidden" id="s8-confirm">
+        <div class="screen-head">
+          <span class="eyebrow">kurz no eine Frog</span>
+          <h2 class="headline">Möchsch du dini Angabe a Tobi weitersende?</h2>
+        </div>
+        <p class="body">Dini Uswahl und Antwörtli – er freut sich devo&nbsp;:)</p>
+        <div class="btn-dock">
+          <button class="btn btn-fill" onclick="confirmSendData(true)">Ja, gerne&nbsp;😄</button>
+          <button class="btn btn-ghost" onclick="confirmSendData(false)">Nei, danke</button>
+        </div>
+      </div>
+
       <!-- Hauptinhalt -->
-      <div class="screen-body" id="s8-main">
+      <div class="screen-body hidden" id="s8-main">
         <div class="screen-head">
           <span class="eyebrow">wow.</span>
           <h2 class="headline">Du häsch es würkli bis zum Schluss durezoge, geil!.</h2>
@@ -469,7 +461,6 @@
     </section>
 
   </div><!-- /app -->
-
   <script src="app.js"></script>
 </body>
 </html>

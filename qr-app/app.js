@@ -34,6 +34,7 @@ const state = {
   contactType:         null,
   name:                '',
   phone:               '',
+  dataSent:            false,  // true wenn WhatsApp bereits in S7 gesendet wurde
 };
 
 
@@ -322,66 +323,99 @@ function submitContact() {
   state.name  = name;
   state.phone = phone;
 
-  const summary = buildSummary();
+  if (phone) {
+    // Nummer eingegeben → sofort per WhatsApp senden
+    const summary = buildSummary();
+    const msg =
+      `Hey Tobi! 👋\n` +
+      `\nJemand hat deinen QR-Code durchgeklickt 😄\n` +
+      `\n👤 Name: ${name || '–'}` +
+      `\n📱 Nummer: ${phone || '–'}` +
+      (summary ? `\n\n──────────────\n${summary}` : '');
 
-  const msg =
-    `Hey Tobi! 👋\n` +
-    `\nJemand hat deinen QR-Code durchgeklickt 😄\n` +
-    `\n👤 Name: ${name || '–'}` +
-    `\n📱 Nummer: ${phone || '–'}` +
-    (summary ? `\n\n──────────────\n${summary}` : '');
-
-  if (WHATSAPP_NUMMER) {
-    window.open(
-      'https://wa.me/' + WHATSAPP_NUMMER.replace(/\D/g, '') +
-      '?text=' + encodeURIComponent(msg),
-      '_blank'
-    );
-  } else if (MEINE_EMAIL) {
-    const subject = encodeURIComponent('QR-Code: ' + (name || 'Jemand') + ' möchte sich vorstellen');
-    window.location.href = 'mailto:' + MEINE_EMAIL +
-      '?subject=' + subject + '&body=' + encodeURIComponent(msg);
+    if (WHATSAPP_NUMMER) {
+      window.open(
+        'https://wa.me/' + WHATSAPP_NUMMER.replace(/\D/g, '') +
+        '?text=' + encodeURIComponent(msg),
+        '_blank'
+      );
+    } else if (MEINE_EMAIL) {
+      const subject = encodeURIComponent('QR-Code: ' + (name || 'Jemand') + ' möchte sich vorstellen');
+      window.location.href = 'mailto:' + MEINE_EMAIL +
+        '?subject=' + subject + '&body=' + encodeURIComponent(msg);
+    }
+    state.dataSent = true;
+  } else {
+    // Keine Nummer → Bestätigung erst in S8 einholen
+    state.dataSent = false;
   }
 
   goTo(8);
+  setTimeout(showS8, 200);
 }
 
 
 /* ── SCREEN 7: WEITER-BUTTON (alle Kontakttypen) ────────── */
 function proceedFromContact() {
-  // Nummer-Fall: Daten wurden bereits via submitContact() gesendet
+  // Nummer-Fall: wurde via submitContact() behandelt
   if (state.contactType === 'number') {
     goTo(8);
+    setTimeout(showS8, 200);
     return;
   }
 
-  // Direkt / Unsicher: Zusammenfassung per WhatsApp senden (ohne Kontaktdaten)
-  const summary = buildSummary();
-  const label = state.contactType === 'direct'
-    ? '😄 Sie spricht dich lieber direkt an.'
-    : '🤔 Sie ist sich noch nicht sicher.';
-
-  const msg =
-    `Hey Tobi! 👋\n` +
-    `\nJemand hat deinen QR-Code durchgeklickt.\n` +
-    `\n${label}` +
-    (summary ? `\n\n──────────────\n${summary}` : '');
-
-  if (WHATSAPP_NUMMER) {
-    window.open(
-      'https://wa.me/' + WHATSAPP_NUMMER.replace(/\D/g, '') +
-      '?text=' + encodeURIComponent(msg),
-      '_blank'
-    );
-  } else if (MEINE_EMAIL) {
-    const subject = encodeURIComponent('QR-Code: Jemand war neugierig');
-    window.location.href = 'mailto:' + MEINE_EMAIL +
-      '?subject=' + subject + '&body=' + encodeURIComponent(msg);
-  }
-
+  // Direkt / Unsicher → kein WhatsApp jetzt, erst Bestätigung in S8
+  state.dataSent = false;
   goTo(8);
+  setTimeout(showS8, 200);
 }
 
+
+/* ── SCREEN 8: ANZEIGE ──────────────────────────────────── */
+function showS8() {
+  if (state.dataSent) {
+    // Daten wurden bereits gesendet → direkt zum Abschluss
+    show('s8-main');
+    hide('s8-confirm');
+  } else {
+    // Bestätigung einholen
+    hide('s8-main');
+    show('s8-confirm');
+  }
+}
+
+function confirmSendData(send) {
+  if (send) {
+    const summary = buildSummary();
+    const label = state.contactType === 'direct'
+      ? '😄 Sie spricht dich lieber direkt an.'
+      : state.contactType === 'unsure'
+      ? '🤔 Sie ist sich noch nicht sicher.'
+      : '📱 Hat keine Nummer hinterlassen.';
+
+    const name = state.name;
+    const msg =
+      `Hey Tobi! 👋\n` +
+      `\nJemand hat deinen QR-Code durchgeklickt.\n` +
+      (name ? `\n👤 Name: ${name}` : '') +
+      `\n${label}` +
+      (summary ? `\n\n──────────────\n${summary}` : '');
+
+    if (WHATSAPP_NUMMER) {
+      window.open(
+        'https://wa.me/' + WHATSAPP_NUMMER.replace(/\D/g, '') +
+        '?text=' + encodeURIComponent(msg),
+        '_blank'
+      );
+    } else if (MEINE_EMAIL) {
+      window.location.href = 'mailto:' + MEINE_EMAIL +
+        '?subject=' + encodeURIComponent('QR-Code: Jemand war neugierig') +
+        '&body=' + encodeURIComponent(msg);
+    }
+  }
+  hide('s8-confirm');
+  show('s8-main');
+}
 
 /* ── SCREEN 8: ABSCHLUSS ────────────────────────────────── */
 function sendDrinkPhoto() {
